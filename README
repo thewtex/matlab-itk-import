@@ -1,0 +1,5 @@
+The purpose of this project is to develop a Matlab[1] mex file (function callable
+from Matlab) for importing any image format supported by ITK[2].
+
+[1] http://www.mathworks.com/matlab
+[2] http://www.itk.org
