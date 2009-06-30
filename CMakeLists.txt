@@ -7,4 +7,8 @@ project(matlab-itk-import)
 
 find_package(ITK REQUIRED)
 
+set(MATLAB_FUNCTION_NAME itkimport)
+configure_file(${matlab-itk-import_SOURCE_DIR}/source/matlab_itk_import.cpp
+  ${matlab-itk-import_BINARY_DIR}/source/matlab_itk_import.cpp)
+
 add_subdirectory(source)
