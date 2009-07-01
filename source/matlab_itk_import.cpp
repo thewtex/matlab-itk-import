@@ -1,4 +1,15 @@
+/** 
+ * @file matlab_itk_import.cpp
+ * @brief gateway function
+ * @author Matthew McCormick (thewtex)
+ * @version 
+ * @date 2009-07-01
+ */
+
 #include "mex.h" 
+
+#include "MainPipeline.h"
+
 
 void mexFunction(int nlhs, mxArray *plhs[],
     int nrhs, const mxArray *prhs[])
@@ -14,5 +25,17 @@ void mexFunction(int nlhs, mxArray *plhs[],
   unsigned int slice = 0;
   if (nrhs > 1)
     slice = static_cast<unsigned int>(*mxGetPr(prhs[1]));
+
+  try
+    {
+    MainPipeline pipeline(filepath, slice);
+    pipeline.Update();
+    }
+  catch (std::exception& e)
+    {
+    mexErrMsgTxt(e.what());
+    return;
+    }
+
 } 
 
