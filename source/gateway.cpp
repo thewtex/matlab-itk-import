@@ -7,6 +7,7 @@
  */
 
 #include <memory>
+using std::auto_ptr;
 
 #include "mex.h" 
 
@@ -30,8 +31,8 @@ void mexFunction(int nlhs, mxArray *plhs[],
 
   try
     {
-    MainPipeline pipeline(filepath, slice);
-    pipeline.Update();
+    auto_ptr<MainPipeline> pipeline(new MainPipeline(filepath, slice));
+    pipeline->Update();
     }
   catch (std::exception& e)
     {
