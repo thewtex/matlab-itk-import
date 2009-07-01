@@ -1,10 +1,12 @@
 /** 
- * @file matlab_itk_import.cpp
- * @brief gateway function
+ * @file gateway.cpp
+ * @brief Matlab mex gateway function
  * @author Matthew McCormick (thewtex)
  * @version 
  * @date 2009-07-01
  */
+
+#include <memory>
 
 #include "mex.h" 
 

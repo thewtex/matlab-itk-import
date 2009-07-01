@@ -10,6 +10,7 @@
 #define _MAINPIPELINE_H
 
 #include "itkImageFileReader.h"
+#include "itkRegionOfInterestImageFilter.h"
 
 class MainPipeline
 {
@@ -30,6 +31,8 @@ protected:
   // filter types
   typedef itk::ImageFileReader<ImageType> ReaderType;
   ReaderType::Pointer m_reader;
+  typedef itk::RegionOfInterestImageFilter<ImageType, ImageType> ROIType;
+  ROIType::Pointer m_roi_filter;
 
   char* m_filepath;
   unsigned int m_slice;
