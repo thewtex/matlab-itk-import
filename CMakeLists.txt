@@ -16,5 +16,6 @@ if(${ITK_BUILD_SHARED} STREQUAL "ON")
 endif(${ITK_BUILD_SHARED} STREQUAL "ON")
 
 set(MATLAB_FUNCTION_NAME itkimport)
+set(SLICECOUNT_FUNCTION_NAME slicecount)
 
 add_subdirectory(source)
