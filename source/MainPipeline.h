@@ -9,6 +9,8 @@
 #ifndef _MAINPIPELINE_H
 #define _MAINPIPELINE_H
 
+#include "mex.h"
+
 #include "itkImageFileReader.h"
 #include "itkRegionOfInterestImageFilter.h"
 
@@ -17,10 +19,25 @@ class MainPipeline
 public:
   MainPipeline(char* filepath, unsigned int slice=0);
 
+
   /** 
-   * @brief Update the pipeline
+   * @brief Creates and copies the resulting image and its location information to the given
+   * double pointers.  Transpose to address C/Fortran column/row memory
+   * ordering.
+   * 
+   * @param image
+   * @param origin
+   * @param spacing
    */
-  void Update();
+  void CopyAndTranspose(double* image, double* origin=0, double* spacing=0);
+
+  /** 
+   * @brief get the size of the transposed output image
+   * 
+   * @param m rows 
+   * @param n columns 
+   */
+  void GetSize(size_t& m, size_t& n, size_t& s);
 
   // main itk types
   typedef double PixelType;
