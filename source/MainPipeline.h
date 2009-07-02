@@ -9,8 +9,6 @@
 #ifndef _MAINPIPELINE_H
 #define _MAINPIPELINE_H
 
-#include "mex.h"
-
 #include "itkImageFileReader.h"
 #include "itkRegionOfInterestImageFilter.h"
 

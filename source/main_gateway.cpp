@@ -1,5 +1,5 @@
 /** 
- * @file gateway.cpp
+ * @file main_gateway.cpp
  * @brief Matlab mex gateway function
  * @author Matthew McCormick (thewtex)
  * @version 
