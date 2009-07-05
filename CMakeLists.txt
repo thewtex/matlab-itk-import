@@ -15,7 +15,10 @@ if(${ITK_BUILD_SHARED} STREQUAL "ON")
   that is specified in your mexopts.* file.")
 endif(${ITK_BUILD_SHARED} STREQUAL "ON")
 
-set(MATLAB_FUNCTION_NAME itkimport)
-set(SLICECOUNT_FUNCTION_NAME slicecount)
+set(MATLAB_FUNCTION_NAME itkimport CACHE STRING 
+  "Name of the main resulting matlab function.")
+set(SLICECOUNT_FUNCTION_NAME slicecount CACHE STRING
+  "Name of the resulting slice count matlab function.")
+mark_as_advanced(MATLAB_FUNCTION_NAME SLICECOUNT_FUNCTION_NAME)
 
 add_subdirectory(source)
