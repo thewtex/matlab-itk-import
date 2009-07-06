@@ -29,7 +29,6 @@ message(STATUS "Warning: assuming have GNUMEX/MinGW as the backend.")
   # the mex compiler only links in user's static libs, by default, so we add the
   # dll's needed by ITK's gdcm here via the gnumex interface
   # tested against gnumex-2.01
-  # set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} GM_ADD_LIBS='-llibmx -llibmex -llibmat -lsnmpapi -lrpcrt4 -lws2_32 -lcomcl32 -lwsock32 -lgdi32 ' ")
   set(ENV{GM_ADD_LIBS} "-llibmx -llibmex -llibmat -lsnmpapi -lrpcrt4 -lws2_32 -lcomcl32 -lwsock32 -lgdi32")
 endif(MSYS)
 
