@@ -7,6 +7,8 @@
  */
 
 #include <memory>
+#include <string>
+
 using std::auto_ptr;
 
 #include "mex.h" 
@@ -22,7 +24,13 @@ void mexFunction(int nlhs, mxArray *plhs[],
     nrhs > 2 ||
     !mxIsChar(prhs[0]) ||
     (nrhs == 2 && !mxIsNumeric(prhs[1])) )
-    mexErrMsgTxt("Incorrect arguments, see 'help @MATLAB_FUNCTION_NAME@'");
+    {
+    std::string msg;
+    msg += "Incorrect arguments, see 'help ";
+    msg += mexFunctionName();
+    msg += '\'';
+    mexErrMsgTxt(msg.c_str());
+    }
 
   char* filepath = mxArrayToString(prhs[0]);
   // we will use Matlab counting, i.e. start from 1 instead of 0
